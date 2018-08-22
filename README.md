@@ -11,6 +11,8 @@ Claymore-PhoenixMiner-Web-Stat is a simple PHP web stats page that utilizes the 
 * Per GPU fan percentages (with configurable thresholds)
 * Auto Refreshing (configurable)
 
+
+
 ##How to use
 
 Usage of the script is simple, and all you need to run it is a server with PHP and IIS/Apache
@@ -21,6 +23,7 @@ Installation Instructions
 * Edit `config.php` to update the server list, you can have as many or as few as you want
 * Browse to `your/path/index.php` and view stats
 * If you wish to edit the yellow and red warning thresholds for fan speed and GPU temp, you can change the values in `config.php`
+
 
 
 ##Screenshot
