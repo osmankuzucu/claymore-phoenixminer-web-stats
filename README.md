@@ -13,7 +13,7 @@ Claymore-PhoenixMiner-Web-Stat is a simple PHP web stats page that utilizes the 
 
 
 
-##How to use
+## How to use
 
 Usage of the script is simple, and all you need to run it is a server with PHP and IIS/Apache
 
@@ -26,7 +26,7 @@ Installation Instructions
 
 
 
-##Screenshot
+## Screenshot
 
 This is what the application looks like:
 
