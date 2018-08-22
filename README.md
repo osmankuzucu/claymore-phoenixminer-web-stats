@@ -28,8 +28,16 @@ Installation Instructions
    * Power usage - Usage in W/h (ex. 1200)
    * Power cost - Cost of power in USD per KW/h (ex. 0.105)
    * Pool Fee - Current pool fee in percent (ex. 0.9)
+   
+   
+## How Can I Help?
 
+If you find this little page useful, please consider buying me a drink, or at least donating a little bit of crypto so I can buy my own drink :)
 
+* ETH: `0x43883860168A1F3B53920EA5497Be99FEcdFD99E`
+* ETC: `0x373a58Ac1ebfbB9C2Df26D42014c65A40F9A135B`
+* DASH: `XsFW3Tqmfu1V74obQXib1efXCa9MR8Cy69`
+* LTC: `LWQre6uUo9awERFokn2mVLbvto5Lw1SdWp`
 
 ## Screenshot
 
