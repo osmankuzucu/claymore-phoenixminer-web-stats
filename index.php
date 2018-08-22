@@ -1,4 +1,17 @@
 <?php
+/**
+ * Claymore-PhoenixMiner-Web-Stats
+ *
+ * Simple PHP page to connect to any number of Claymore and PhoenixMiner miners and view hashrates, GPU temps, and fan speeds.
+ *
+ * @package     claymore-phoenixminer-web-stats
+ * @version     1.0
+ * @author      James D (jimok82@gmail.com)
+ * @copyright   Copyright (c) 2018 James D.
+ * @license     This file is part of claymore-phoenixminer-web-stats - free software licensed under the GNU General Public License version 3
+ * @link        https://github.com/jimok82/claymore-phoenixminer-web-stats
+ */
+// ------------------------------------------------------------------------
 
 require_once 'conf.php';
 require_once 'json_parser.class.php';
