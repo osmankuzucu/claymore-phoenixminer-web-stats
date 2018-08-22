@@ -11,6 +11,7 @@
  * @license     This file is part of claymore-phoenixminer-web-stats - free software licensed under the GNU General Public License version 3
  * @link        https://github.com/jimok82/claymore-phoenixminer-web-stats
  */
+
 // ------------------------------------------------------------------------
 
 
@@ -101,6 +102,10 @@ class json_parser
 					$temp_sum += $card_stat->temp;
 				}
 				$miner_data->temp_av = round($temp_sum / sizeof($miner_data->card_stats));
+
+				if (is_numeric($server->power_usage) && is_numeric($server->power_cost) && is_numeric($server->pool_fee)) {
+					$miner_data->profitability = $this->get_profit_stats_from_api($miner_data->stats->hashrate, $miner_data->coin, $server->power_usage, $server->power_cost, $server->pool_fee);
+				}
 			}
 
 			$this->miner_data_results->{$name} = $miner_data;
@@ -139,6 +144,20 @@ class json_parser
 
 	}
 
+	public function show_profit($value)
+	{
+		$stripped_value = str_replace("$", '', $value);
+
+		if ($stripped_value > 0) {
+			$class = "stats__value--positive";
+		} else {
+			$class = "stats__value--negative";
+		}
+
+		return "<div class='" . $class . "' style='display: inline'>$value</div>";
+
+	}
+
 	private function check_server_availability()
 	{
 		$this->server_list = $this->convert_to_object($this->server_list);
@@ -171,6 +190,30 @@ class json_parser
 	private function convert_to_object($array)
 	{
 		return json_decode(json_encode($array));
+	}
+
+	private function get_profit_stats_from_api($hashrate, $coin, $power_usage, $power_cost, $pool_fee)
+	{
+		$ch = curl_init();
+
+		if ($coin == 'ETC') {
+			$coin_code = '162';
+		} else {
+			$coin_code = '151';
+		}
+
+		$url = "https://whattomine.com/coins/" . $coin_code . ".json?hr=" . $hashrate . "&p=" . $power_usage . "&fee=" . $pool_fee . "&cost=" . $power_cost . "&hcost=0.0&commit=Calculate";
+
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		$json_response = json_decode($result);
+
+		return $json_response;
 	}
 
 }

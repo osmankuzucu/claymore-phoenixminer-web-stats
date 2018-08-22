@@ -187,9 +187,9 @@ $parser->parse_all_json_rpc_calls();
             display: inline-block;
             border-radius: 5px;
             width: 480px;
-            height: 520px;
+            height: 540px;
             vertical-align: top;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .box-down {
@@ -322,7 +322,10 @@ $parser->parse_all_json_rpc_calls();
                 </div>
             </div>
             <div class="stats">
-                <div class="stats__amount">Miner Hashrate: <?= $miner->stats->hashrate ?> MH/s</div>
+                <div class="stats__amount">Miner Hashrate <? if (!is_null($miner->profitability->profit)) { ?>(Daily Profit)<? } ?></div>
+                <div class="stats__caption">
+					<?= $miner->stats->hashrate ?> MH/s <? if (!is_null($miner->profitability->profit)) { ?>(<?= $parser->show_profit($miner->profitability->profit) ?>)<? } ?>
+                </div>
             </div>
             <div class="stats">
                 <div class="stats__amount">Video Card Stats</div>

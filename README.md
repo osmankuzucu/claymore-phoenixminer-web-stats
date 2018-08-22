@@ -10,6 +10,7 @@ Claymore-PhoenixMiner-Web-Stat is a simple PHP web stats page that utilizes the 
 * Per GPU temperatures (with configurable thresholds)
 * Per GPU fan percentages (with configurable thresholds)
 * Auto Refreshing (configurable)
+* Display profitability from WhatToMine API
 
 
 
@@ -23,6 +24,10 @@ Installation Instructions
 * Edit `config.php` to update the server list, you can have as many or as few as you want
 * Browse to `your/path/index.php` and view stats
 * If you wish to edit the yellow and red warning thresholds for fan speed and GPU temp, you can change the values in `config.php`
+* In order to enable profitability checks, you must edit `config.php` and add the following for each server (default is null)
+   * Power usage - Usage in W/h (ex. 1200)
+   * Power cost - Cost of power in USD per KW/h (ex. 0.105)
+   * Pool Fee - Current pool fee in percent (ex. 0.9)
 
 
 

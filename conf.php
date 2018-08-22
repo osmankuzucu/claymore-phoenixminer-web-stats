@@ -20,17 +20,26 @@
 //      'hostname' => Hostname or IP of node,
 //      'port' => Listening port for Claymore or PhoenixMiner
 //      'password' => If you have a password for the remote monitor, enter it here. Otherwise leave it as null
+//      'power_usage' => The power usage of the rig in watts, for profit calculation
+//      'power_cost' => Set the power cost in USD per KW/h, for profit calculation
+//      'pool_fee' => Set the pool fee percentage, for profit calculation
 //]
 $server_list = (object)[
 	'Server_1' => [
 		'hostname' => "server1.example.com",
 		'port' => 3333,
 		'password' => 'server_1_password',
+		'power_usage' => null,
+		'power_cost' => null,
+		'pool_fee' => null,
 	],
 	'Server_2' => [
 		'hostname' => "server2.example.com",
 		'port' => 3333,
 		'password' => 'server_2_password',
+		'power_usage' => null,
+		'power_cost' => null,
+		'pool_fee' => null,
 	]
 ];
 
