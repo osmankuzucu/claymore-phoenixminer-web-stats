@@ -55,6 +55,6 @@ $gpu_fan_yellow = 50;
 $gpu_fan_red = 75;
 
 //Set the page refresh interval
-$refresh_interval = 5;
+$refresh_interval = 15;
 
 ?>
